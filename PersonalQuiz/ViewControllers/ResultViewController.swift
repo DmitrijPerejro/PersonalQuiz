@@ -24,8 +24,10 @@ final class ResultViewController: UIViewController {
     @IBAction func doneButtonAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
-    
-    private func getAnimal(_ answers: [Answer]) -> Animal {
+}
+
+private extension ResultViewController {
+    func getAnimal(_ answers: [Answer]) -> Animal {
         var animalCount: [Animal: Int] = [:]
 
         for answer in answers {
@@ -37,7 +39,7 @@ final class ResultViewController: UIViewController {
         return sortedAnimals.first?.key ?? .dog
     }
     
-    private func updateUI(_ animal: Animal) {
+    func updateUI(_ animal: Animal) {
         resultLabelTitle.text = "Вы - \(animal.rawValue)"
         resullLabelDefinition.text = animal.definition
     }
