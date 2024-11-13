@@ -15,7 +15,7 @@ final class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
+        navigationItem.hidesBackButton = true
         
         let animal = getAnimal(result);
         updateUI(animal)
